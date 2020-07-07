@@ -23,7 +23,6 @@ function Slider() {
   };
 
   const goRight = () => {
-    //slideArr.length was used so that the input can be dynamic
     x === -100 * (slideArr.length - 1) ? setX(0) : setX(x - 100);
   };
 
@@ -41,10 +40,10 @@ function Slider() {
         );
       })}
       <button id="goLeft" onClick={goLeft}>
-        <i class="fas fa-chevron-left"></i>
+        <i className="fas fa-chevron-left"></i>
       </button>
       <button id="goRight" onClick={goRight}>
-        <i class="fas fa-chevron-right"></i>
+        <i className="fas fa-chevron-right"></i>
       </button>
     </div>
   );
