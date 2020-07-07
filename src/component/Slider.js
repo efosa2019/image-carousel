@@ -7,8 +7,6 @@ import i3 from '../component/pics/3.jpg';
 import i4 from '../component/pics/4.jpg';
 import i5 from '../component/pics/5.jpg';
 function Slider() {
-  //Creating an array of items
-
   let slideArr = [
     <Image src={i1} />,
     <Image src={i2} />,
@@ -23,7 +21,6 @@ function Slider() {
   };
 
   const goRight = () => {
-    //slideArr.length was used so that the input can be dynamic
     x === -100 * (slideArr.length - 1) ? setX(0) : setX(x - 100);
   };
 
