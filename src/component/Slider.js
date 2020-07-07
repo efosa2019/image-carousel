@@ -23,6 +23,7 @@ function Slider() {
   };
 
   const goRight = () => {
+    //slideArr.length was used so that the input can be dynamic
     x === -100 * (slideArr.length - 1) ? setX(0) : setX(x - 100);
   };
 
