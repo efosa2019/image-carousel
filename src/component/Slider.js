@@ -1,22 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../component/Slider.scss';
+import Image from '../component/Image';
+import i1 from '../component/pics/1.jpg';
+import i2 from '../component/pics/2.jpg';
+import i3 from '../component/pics/3.jpg';
+import i4 from '../component/pics/4.jpg';
+import i5 from '../component/pics/5.jpg';
 function Slider() {
-	//Creating an array of items
+  //Creating an array of items
 
-	let slideArr = [1, 2, 3, 4, 5];
+  let slideArr = [
+    <Image src={i1} />,
+    <Image src={i2} />,
+    <Image src={i3} />,
+    <Image src={i4} />,
+    <Image src={i5} />,
+  ];
+  const [x, setX] = useState(0);
 
-	return (
-		<div className="slider">
-			{slideArr.map((item, index) => {
-				return (
-					<div key={index} className="slide">
-						{item}
-					</div>
-				);
-			})}
-			<button id="goLeft">Left</button>
-			<button id="goRight">Right</button>
-		</div>
-	);
+  const goLeft = () => {
+    x === 0 ? setX(-100 * (slideArr.length - 1)) : setX(x + 100);
+  };
+
+  const goRight = () => {
+    //slideArr.length was used so that the input can be dynamic
+    x === -100 * (slideArr.length - 1) ? setX(0) : setX(x - 100);
+  };
+
+  return (
+    <div className="slider">
+      {slideArr.map((item, index) => {
+        return (
+          <div
+            key={index}
+            className="slide"
+            style={{ transform: `translateX(${x}%)` }}
+          >
+            {item}
+          </div>
+        );
+      })}
+      <button id="goLeft" onClick={goLeft}>
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="goRight" onClick={goRight}>
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  );
 }
 export default Slider;
