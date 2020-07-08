@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import '../component/Slider.scss';
-import Image from '../component/Image';
-import i1 from '../component/pics/1.jpg';
-import i2 from '../component/pics/2.jpg';
-import i3 from '../component/pics/3.jpg';
-import i4 from '../component/pics/4.jpg';
-import i5 from '../component/pics/5.jpg';
+import React, { useState } from "react";
+import "../component/Slider.scss";
+import Image from "../component/Image";
+import i1 from "../component/pics/1.jpg";
+import i2 from "../component/pics/2.jpg";
+import i3 from "../component/pics/3.jpg";
+import i4 from "../component/pics/4.jpg";
+import i5 from "../component/pics/5.jpg";
 function Slider() {
   let slideArr = [
     <Image src={i1} />,
@@ -21,7 +21,6 @@ function Slider() {
   };
 
   const goRight = () => {
-    //slideArr.length was used so that the input can be dynamic
     x === -100 * (slideArr.length - 1) ? setX(0) : setX(x - 100);
   };
 
@@ -39,10 +38,10 @@ function Slider() {
         );
       })}
       <button id="goLeft" onClick={goLeft}>
-        <i className="fas fa-chevron-left"></i>
+        <i class="fas fa-chevron-left"></i>
       </button>
       <button id="goRight" onClick={goRight}>
-        <i className="fas fa-chevron-right"></i>
+        <i class="fas fa-chevron-right"></i>
       </button>
     </div>
   );

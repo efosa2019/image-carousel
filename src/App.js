@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import './App.css';
-import Slider from './component/Slider';
+import "./App.css";
+import Slider from "./component/Slider";
 
 function App() {
   return (
